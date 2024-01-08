@@ -28,4 +28,12 @@ async function deleteUserDb(_id) {
   return data;
 }
 
-module.exports = { createUserDb, geteAllUserDb, updateUserDb, deleteUserDb, getUserByIdDb};
+async function getUserByEmail(email) {
+  
+  const data = await TableUser.find({email: email});
+  return data;
+}
+
+
+
+module.exports = { createUserDb, geteAllUserDb, updateUserDb, deleteUserDb, getUserByIdDb, getUserByEmail};
